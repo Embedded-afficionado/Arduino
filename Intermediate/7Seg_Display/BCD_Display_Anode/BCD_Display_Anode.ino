@@ -190,8 +190,13 @@ void loop(void)
       Serial.println(controladora);
   }
   if(buttonState_Stopper == LOW){
-    controladora = -1;
-      
+      controladora = -1;
   }
-  delay(200);
+  if(buttonState_number_drawer == LOW){
+      random_N = random(0,9);
+      Serial.println(random_N);
+ 	    numero_atual(random_N);
+      controladora = random_N;
+  }
+  delay(300);
 }
